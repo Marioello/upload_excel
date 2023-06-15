@@ -1,0 +1,103 @@
+﻿@model IEnumerable<WebApplication.Models.Penjualan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Upload", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_trx)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.No_invoice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total_berat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ongkos_kirim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total_harga)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total_harga_beli)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kode_user)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Alamat_penerima)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tgl_kirim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_ekspedisi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Jenis_pengiriman)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tgl_trx)
+        </th>
+    </tr>
+
+    @if (Model.Count() > 0)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id_trx)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.No_invoice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total_berat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ongkos_kirim)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total_harga)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total_harga_beli)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kode_user)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Alamat_penerima)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tgl_kirim)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id_ekspedisi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Jenis_pengiriman)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tgl_trx)
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="12" style="text-align:center;">Belum ada data</td>
+        </tr>
+    }
+
+</table>

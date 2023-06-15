@@ -1,0 +1,31 @@
+﻿@model WebApplication.Models.ViewModel
+
+@{
+    ViewBag.Title = "Upload!";
+}
+
+<h2>Upload</h2>
+
+<style>
+    .search-form input {
+        display: inline-block;
+    }
+</style>
+
+@using (Html.BeginForm("Upload", "Upload", FormMethod.Post, new
+{ enctype = "multipart/form-data" }))
+{
+    @Html.TextBoxFor(m => m.File, new { type = "file" })
+    @Html.ValidationMessageFor(m => m.File)
+    <br />
+    <input type="submit" class="btn btn-primary" value="Upload" />
+}
+
+<br />
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
